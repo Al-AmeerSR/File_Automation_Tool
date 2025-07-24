@@ -4,84 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0ba38dc-3bfb-42fe-ae9b-b3e2f7a8075e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/backup_report_20250721_194312.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/deleted_files_report_20250721_184811.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/organized_files_report_20250721_182010.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/File_Automation_Tool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/checker/DocxCorruptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/checker/FileCorruptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/checker/ImageCorruptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/checker/PdfCorruptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/checker/TxtCorruptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/checker/ZipCorruptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/ApplicationContextProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/BatchConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/JobConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/processor/FileCleanUpItemProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/processor/FileCompressAndBackUpItemProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/processor/FileOrganizeItemProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/reader/FileCleanUpItemReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/reader/FileCompressAndBackUpItemReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/reader/FileOrganizeItemReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/writer/FileCleanUpItemWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/writer/FileCompressAndBackUpItemWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/config/writer/FileOrganizeItemWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/constants/FAT_Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/controller/JobController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/database/Tables" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/FileCheckResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/FileDeletionSummary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/FileMetadata.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/JobRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/LoginRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/PaginatedResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/dto/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/entity/JobDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/entity/Permissions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/entity/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/entity/UserPrincipal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/exception/DuplicateJobNameException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/exception/InValidDirectoryException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/exception/InValidJobStartTimeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/exception/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/jobs/FileCleanUpJob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/jobs/FileCompressAndBackUpJob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/jobs/FileOrganizeJob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/listener/JobStatusListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/repository/JobDetailsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/BatchJobExecutorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/FileAutomationToolUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/FileService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/JobDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/ReportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/SchedulerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/utils/FileUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/utils/JobRequestValidationUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automation_tool/utils/JobUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/automation_tool/FileAutomationToolTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="c0ba38dc-3bfb-42fe-ae9b-b3e2f7a8075e" name="Changes" comment="authentication added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -108,11 +40,16 @@
   "keyToString": {
     "Application.File_Automation_Tool.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.File_Automation_Tool.executor": "Run",
     "git-widget-placeholder": "Main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/File_Automation_Tool/File_Automation_Tool_Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "vue.rearranger.settings.migration": "true"
@@ -157,11 +94,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1753345439836</updated>
-      <workItem from="1753345444143" duration="266000" />
+      <workItem from="1753345444143" duration="602000" />
     </task>
+    <task id="LOCAL-00001" summary="authentication added">
+      <option name="closed" value="true" />
+      <created>1753345857915</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753345857915</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="authentication added" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication added" />
   </component>
 </project>
