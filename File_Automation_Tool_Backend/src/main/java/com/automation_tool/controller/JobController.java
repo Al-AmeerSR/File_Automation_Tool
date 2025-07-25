@@ -5,6 +5,7 @@ import com.automation_tool.dto.PaginatedResponseDTO;
 import com.automation_tool.entity.JobDetails;
 import com.automation_tool.service.SchedulerService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
@@ -19,18 +20,21 @@ public class JobController {
         this.schedulerService = schedulerService;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<String> createJob(@RequestBody JobRequestDTO request) {
         String result = schedulerService.createJob(request);
         return ResponseEntity.ok(result);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping("/update")
     public ResponseEntity<String> updateJob(@RequestBody JobRequestDTO request) {
         String result = schedulerService.updateJob(request);
         return ResponseEntity.ok(result);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteJob(
             @RequestParam String jobName,
