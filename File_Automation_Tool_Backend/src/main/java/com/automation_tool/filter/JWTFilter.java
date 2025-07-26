@@ -5,7 +5,8 @@ import com.automation_tool.service.JWTService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.context.ApplicationContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +21,7 @@ public class JWTFilter extends OncePerRequestFilter {
 
     private final JWTService jwtService;
     private final  FileAutomationToolUserDetailsService userDetailsService ;
+    private final Logger logger = LoggerFactory.getLogger(JWTFilter.class);
     public JWTFilter(JWTService jwtService,
                      FileAutomationToolUserDetailsService userDetailsService) {
         this.jwtService = jwtService;
@@ -28,13 +30,14 @@ public class JWTFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
+        logger.info("no filter");
         String path = request.getServletPath();
         return path.equals("/refresh") ;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-
+        logger.info(" filter");
         String authorizationHeader = request.getHeader("Authorization");
         String token,email = null;
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {

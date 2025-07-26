@@ -25,17 +25,15 @@ public class JWTService {
     @Value("${secret.key}")
     private  String SECRET_KEY ;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    private final RedisUtilService redisUtilService ;
     private final RedisTemplate<String, Object> redisTemplate;
 
-    public JWTService(RedisUtilService redisUtilService, RedisTemplate<String, Object> redisTemplate) {
-        this.redisUtilService = redisUtilService;
+    public JWTService( RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
     private String generateAccessToken(String email) {
 
-        Map<String, String> claims = new HashMap<String, String>();
+        Map<String, String> claims = new HashMap<>();
         claims.put("type", "access_token");
 
         return Jwts.builder()
@@ -51,7 +49,7 @@ public class JWTService {
 
     private String generateRefreshToken(String email) {
 
-        Map<String, String> claims = new HashMap<String, String>();
+        Map<String, String> claims = new HashMap<>();
         claims.put("type", "refresh_token");
 
         return Jwts.builder()
@@ -109,20 +107,20 @@ public class JWTService {
         }
 
         return (userDetails.getUsername().equals(email) &&
-                !isTokenExpired(token) &&
+                isTokenExpired(token) &&
                 !"refresh_token".equals(tokenType));
 
     }
 
     private boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
+        return !extractExpiration(token).before(new Date());
     }
 
     private Date extractExpiration(String token) {
         return extractClaims(token, Claims::getExpiration);
     }
 
-    public HashMap<String,String> generateAccessTokenWithRefreshToken(String refreshToken) {
+    public Map<String,String> generateAccessTokenWithRefreshToken(String refreshToken) {
 
         String email = extractEmail(refreshToken);
         String accessToken = generateAccessToken(email);
@@ -140,7 +138,7 @@ public class JWTService {
         }
 
         return (userDetails.getUsername().equals(email) &&
-                !isTokenExpired(refreshToken) &&
+                isTokenExpired(refreshToken) &&
                 !"access_token".equals(tokenType));
 
     }
@@ -158,7 +156,7 @@ public class JWTService {
             }
         } catch (Exception e) {
             // Token may be invalid or expired already
-            System.out.println("Failed to parse token for blacklisting: " + e.getMessage());
+            logger.info("Failed to parse token for blacklisting: {}" ,e.getMessage());
         }
     }
 

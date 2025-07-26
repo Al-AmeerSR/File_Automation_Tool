@@ -59,7 +59,7 @@ public class UserService {
        return new RefreshAndAccessTokenDTO("","","Authentication Failed");
     }
 
-    public HashMap<String,String> generateAccessToken(String refreshToken){
+    public Map<String,String> generateAccessToken(String refreshToken){
 
        String email = jwtService.extractEmail(refreshToken);
        UserDetails userDetails = userDetailsService.loadUserByUsername(email);

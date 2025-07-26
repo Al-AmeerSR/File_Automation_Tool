@@ -10,8 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class UserController {
@@ -43,7 +42,7 @@ public class UserController {
     }
 
     @PostMapping("/refresh")
-    public ResponseEntity<HashMap<String,String>> generateAccessToken(@RequestBody RefreshAndAccessTokenDTO refreshAndAccessTokenDTO) {
+    public ResponseEntity<Map<String,String>> generateAccessToken(@RequestBody RefreshAndAccessTokenDTO refreshAndAccessTokenDTO) {
         return new ResponseEntity<>(userService.generateAccessToken(refreshAndAccessTokenDTO.refreshToken()),HttpStatus.OK);
     }
 
