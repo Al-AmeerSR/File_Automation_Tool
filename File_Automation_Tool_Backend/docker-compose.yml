@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  secure-redis:
+    image: bitnami/redis:latest
+    container_name: secure-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_CONFIG_FILE=/opt/bitnami/redis/mounted-etc/redis.conf
+      - REDIS_PASSWORD=pass
+    volumes:
+      - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf"
+      - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/users.acl:/opt/bitnami/redis/mounted-etc/users.acl"
+      # - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/redisData:/bitnami/redis"  # Uncomment for persistent data
+
+  file-automation-tool:
+    image: file-automation-tool:latest
+    container_name: file-automation-tool
+    depends_on:
+      - secure-redis
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: host.docker.internal
+      SPRING_DATA_REDIS_HOST: secure-redis
+      SPRING_DATA_REDIS_PORT: 6379
+      REDIS_USERNAME: ameer
+      REDIS_PASSWORD: pass
+    restart: unless-stopped
