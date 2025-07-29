@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
   secure-redis:
@@ -13,7 +13,8 @@ services:
     volumes:
       - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf"
       - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/users.acl:/opt/bitnami/redis/mounted-etc/users.acl"
-      # - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/redisData:/bitnami/redis"  # Uncomment for persistent data
+      # Uncomment for persistent Redis data:
+      # - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/redisData:/bitnami/redis"
 
   file-automation-tool:
     build:
@@ -32,3 +33,26 @@ services:
       - REDIS_USERNAME=ameer
       - REDIS_PASSWORD=pass
     restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - file-automation-tool
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus

@@ -1,0 +1,11 @@
+Spring Boot app → http://localhost:8080/actuator/prometheus
+
+Prometheus UI → http://localhost:9090
+
+Grafana UI → http://localhost:3000
+
+Login: admin / admin
+
+Add Prometheus data source: http://prometheus:9090
+
+Import dashboard: ID 4701

@@ -1,0 +1,51 @@
+redis configuration with acl(Access Control list)
+===============================
+
+#port 6379
+# Disable the default user for safety
+#user default off
+# Create and enable user "ameer" with password "pass"
+# - "on": enable the user
+# - ">pass": sets the password
+# - "allcommands": allow all Redis commands
+# - "allkeys": allow access to all keys
+#user username on >pass allcommands allkeys
+
+redis.conf
+=============
+port 6379
+aclfile /opt/bitnami/redis/mounted-etc/users.acl
+
+
+users.acl
+===========
+user default off
+user username on >pass allcommands allkeys
+
+
+run command 
+==============
+docker run -d `
+  --name secure-redis `
+  -p 6379:6379 `
+  -v "your_redis_config_file_path/redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf" `
+  -v "your_acl_config_file_path/users.acl:/opt/bitnami/redis/mounted-etc/users.acl" `
+  -e REDIS_CONFIG_FILE="/opt/bitnami/redis/mounted-etc/redis.conf" `
+  -e REDIS_PASSWORD=pass `
+  bitnami/redis:latest
+
+powershell single line command
+==============================
+docker run -d --name secure-redis -p 6379:6379 -v "your_redis_config_file_path/redis.conf/redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf" -v "your_acl_config_file_path/users.acl/users.acl:/opt/bitnami/redis/mounted-etc/users.acl" -e REDIS_CONFIG_FILE="/opt/bitnami/redis/mounted-etc/redis.conf" -e REDIS_PASSWORD=pass bitnami/redis:latest
+
+
+connecting and logging to redis
+===================
+docker exec -it secure-redis redis-cli -u redis://username:password@localhost:6379
+
+value setting and retrieving
+================================
+SET testkey "Hello"
+GET testkey
+
+
