@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   secure-redis:
@@ -16,6 +16,9 @@ services:
       # - "C:/Users/AL-AMEER S R/Desktop/2025 plan/Springboot projects/redisData:/bitnami/redis"  # Uncomment for persistent data
 
   file-automation-tool:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: file-automation-tool:latest
     container_name: file-automation-tool
     depends_on:
@@ -23,9 +26,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_HOST: host.docker.internal
-      SPRING_DATA_REDIS_HOST: secure-redis
-      SPRING_DATA_REDIS_PORT: 6379
-      REDIS_USERNAME: ameer
-      REDIS_PASSWORD: pass
+      - DB_HOST=host.docker.internal
+      - SPRING_DATA_REDIS_HOST=secure-redis
+      - SPRING_DATA_REDIS_PORT=6379
+      - REDIS_USERNAME=ameer
+      - REDIS_PASSWORD=pass
     restart: unless-stopped
